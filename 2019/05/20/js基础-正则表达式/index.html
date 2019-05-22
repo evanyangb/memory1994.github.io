@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="EvanYang&#39;s Blog">
 <meta property="og:description" content="正则表达式语法123var regexp = new RegExp(pattern, modifiers)var regexp = /pattern/modifiers 需要转义的字符(使用\转义) .(点号), ()(小括号), [](中括号), /(左斜杠), \(右斜杠), |(选择匹配符), *, ?, {}, +, $, -  修饰符   修饰符 描述     i 执行对大小写不敏感的匹">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-21T09:57:00.000Z">
+<meta property="og:updated_time" content="2019-05-22T06:30:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="正则表达式语法123var regexp = new RegExp(pattern, modifiers)var regexp = /pattern/modifiers 需要转义的字符(使用\转义) .(点号), ()(小括号), [](中括号), /(左斜杠), \(右斜杠), |(选择匹配符), *, ?, {}, +, $, -  修饰符   修饰符 描述     i 执行对大小写不敏感的匹">
@@ -251,12 +251,6 @@
 <td style="text-align:left">[^xxx]</td>
 <td style="text-align:left">查找给定集合外的任何字符。</td>
 </tr>
-<tr>
-<td style="text-align:left">red</td>
-<td style="text-align:left">blue</td>
-<td>green</td>
-<td>或表达式</td>
-</tr>
 </tbody>
 </table>
 <h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><table>
@@ -334,27 +328,27 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">x*</td>
+<td style="text-align:left">*</td>
 <td style="text-align:left">匹配前面的子表达式0次或多次 <font color="red">(0或1)</font></td>
 </tr>
 <tr>
-<td style="text-align:left">x+</td>
+<td style="text-align:left">+</td>
 <td style="text-align:left">匹配前面的子表达式1次或多次 <font color="red">(1或多)</font></td>
 </tr>
 <tr>
-<td style="text-align:left">x?</td>
+<td style="text-align:left">?</td>
 <td style="text-align:left">匹配前面的子表达式0次或1次  <font color="red">(0或1)</font></td>
 </tr>
 <tr>
-<td style="text-align:left">x{n}</td>
+<td style="text-align:left">{n}</td>
 <td style="text-align:left">匹配确定n次</td>
 </tr>
 <tr>
-<td style="text-align:left">x{n,}</td>
+<td style="text-align:left">{n,}</td>
 <td style="text-align:left">至少匹配n次</td>
 </tr>
 <tr>
-<td style="text-align:left">x{n,m}</td>
+<td style="text-align:left">{n,m}</td>
 <td style="text-align:left">最少匹配n次，最多匹配m次</td>
 </tr>
 <tr>
@@ -379,7 +373,7 @@
 <hr>
 <h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>在正则表达式中用（）包起来的内容代表了一个分组，像这样的：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d&#123;2&#125;)/</span></span><br><span class="line">reg.test(<span class="string">'12'</span>); <span class="comment">// true</span></span><br><span class="line"><span class="comment">// 这里reg中的(/d&#123;2&#125;)就表示一个分组，匹配两位数字</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p><strong>1.分组类型</strong></p>
+<p><strong>分组类型</strong></p>
 </blockquote>
 <ul>
 <li>捕获型 ()</li>
@@ -388,22 +382,51 @@
 <li>反向前瞻性 (?!)<br>我们使用的比较多的都是捕获型分组，只有这种分组才会暂存匹配到的串</li>
 </ul>
 <blockquote>
-<p><strong>2.分组的应用</strong></p>
+<p><strong>分组的应用</strong></p>
 </blockquote>
 <ul>
-<li><p>捕获与引用</p>
+<li>捕获型与引用(<code>$1~$n</code>)<ul>
+<li>被正则表达式捕获(匹配)到的字符串会被暂存起来，其中，由分组捕获到的字符串会从1开始编号，于是我们可以引用这些字符串：</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span></span><br><span class="line"><span class="keyword">var</span> dateStr = <span class="string">'2019-05-20'</span></span><br><span class="line">reg.test(dateStr) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">1</span> <span class="comment">// 2019</span></span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">2</span> <span class="comment">// 05</span></span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">3</span> <span class="comment">// 20</span></span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">4</span> <span class="comment">// ""</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>被正则表达式捕获(匹配)到的字符串会被暂存起来，其中，由分组捕获到的字符串会从1开始编号，于是我们可以引用这些字符串：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span></span><br><span class="line"><span class="keyword">var</span> dateStr = <span class="string">'2019-05-20'</span></span><br><span class="line">reg.test(dateStr) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">1</span> <span class="comment">// 2019</span></span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">2</span> <span class="comment">// 05</span></span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">3</span> <span class="comment">// 20</span></span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">4</span> <span class="comment">// ""</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>反向引用(<code>\1~\n</code>)<ul>
+<li>正则表达式里也能进行引用，这称为反向引用：</li>
 </ul>
 </li>
-<li><p>反向引用</p>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\w&#123;3&#125;) is \1/</span></span><br><span class="line">reg.test(<span class="string">'kid is kig'</span>) <span class="comment">// true</span></span><br><span class="line">reg.test(<span class="string">'dik is dik'</span>) <span class="comment">// true</span></span><br><span class="line">reg.test(<span class="string">'kid is dik'</span>) <span class="comment">// fals</span></span><br><span class="line">reg.test(<span class="string">'dik is kid'</span>) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// todo 如果引用越界或者不存在的编号，就被解析为普通的表达式</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\w&#123;3&#125;) is \6/</span></span><br><span class="line">reg.test(<span class="string">'kid is kid'</span>) <span class="comment">// false</span></span><br><span class="line">reg.test(<span class="string">'kid is \6'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>正则表达式里也能进行引用，这称为反向引用：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\w&#123;3&#125;) is \1/</span></span><br><span class="line">reg.test(<span class="string">'kid is kig'</span>) <span class="comment">// true</span></span><br><span class="line">reg.test(<span class="string">'dik is dik'</span>) <span class="comment">// true</span></span><br><span class="line">reg.test(<span class="string">'kid is dik'</span>) <span class="comment">// fals</span></span><br><span class="line">reg.test(<span class="string">'dik is kid'</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>非捕获型分组<ul>
+<li>使用分组并且不要捕获(即分组后不能是$1-$n去获取),使用<code>?:</code>,例如：</li>
 </ul>
 </li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(?:\d&#123;4&#125;)-(\d&#123;2&#125;)-(\d&#123;2&#125;)/</span></span><br><span class="line"><span class="keyword">var</span> date = <span class="string">'2019-05-20'</span></span><br><span class="line">reg.test(date)</span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">1</span> <span class="comment">// 05</span></span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">2</span> <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>正向前瞻性分组<ul>
+<li>(?=patter),匹配字符后<code>紧跟patter</code>返回true,否则为false</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/kid is a (?=doubi)/</span></span><br><span class="line">reg.test(<span class="string">'kid is a doubi'</span>) <span class="comment">// true</span></span><br><span class="line">reg.test(<span class="string">'kid is a shabi'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>反向前瞻型分组<ul>
+<li>(?!patter),匹配字符后<code>不紧跟patter</code>返回true,否则为false</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/kid is a (?!doubi)/</span></span><br><span class="line">reg.test(<span class="string">'kid is a doubi'</span>) <span class="comment">// false</span></span><br><span class="line">reg.test(<span class="string">'kid is a shabi'</span>) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>非捕获型和(正向前瞻,反向前瞻)区别<ul>
+<li>非捕获型和(正向前瞻,反向前瞻)都不会捕获</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'kid is a doubi'</span></span><br><span class="line">reg = <span class="regexp">/(kid is a (?:doubi))/</span></span><br><span class="line">reg.test(str)</span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">1</span>  <span class="comment">// kid is a doubi</span></span><br><span class="line"></span><br><span class="line">reg = <span class="regexp">/(kid is a (?=doubi))/</span></span><br><span class="line">reg = <span class="regexp">/(kid is a (?!doubi))/</span></span><br><span class="line">reg.test(str)</span><br><span class="line"><span class="built_in">RegExp</span>.$<span class="number">1</span> <span class="comment">// kid is a</span></span><br></pre></td></tr></table></figure>
+<p>也就是说<code>非捕获型分组</code>匹配到的字符串任然会被<code>外层分组匹配到</code>，而<code>前瞻型不会</code>，所以如果你希望在外层分组中不匹配里面分组的值的话就可以使用前瞻型分组了。</p>
 <hr>
 <h2 id="正则方法"><a href="#正则方法" class="headerlink" title="正则方法"></a>正则方法</h2><blockquote>
 <p><strong>RegExp 对象方法</strong></p>
@@ -505,7 +528,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-05-21T09:57:00.000Z" itemprop="dateUpdated">2019-05-21 17:57:00</time>
+    最后更新时间：<time datetime="2019-05-22T06:30:09.000Z" itemprop="dateUpdated">2019-05-22 14:30:09</time>
 </span><br>
 
 
@@ -587,9 +610,9 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/05/11/文档使用-markdowm文档/" id="post-next" class="post-nav-link">
+      <a href="/2019/05/20/文档使用-Git常用命令/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">markdowm使用文档</h4>
+        <h4 class="title">Git常用命令</h4>
       </a>
     </div>
   
