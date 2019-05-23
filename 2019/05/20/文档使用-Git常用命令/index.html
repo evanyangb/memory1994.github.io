@@ -30,7 +30,7 @@
 <meta property="og:description" content="Git 常用命令 Git主要包含三个区                                                                                                              工作区(working diretory) 用于修改文件 缓存区(stage) 是用来暂时存放工作区中修改的内容 提交历史（commit hi">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/memory1994/SaveImage/master/git_three_rigon.png">
-<meta property="og:updated_time" content="2019-05-22T10:05:25.000Z">
+<meta property="og:updated_time" content="2019-05-23T08:59:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git常用命令">
 <meta name="twitter:description" content="Git 常用命令 Git主要包含三个区                                                                                                              工作区(working diretory) 用于修改文件 缓存区(stage) 是用来暂时存放工作区中修改的内容 提交历史（commit hi">
@@ -162,7 +162,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Git-常用命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git 常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git一般配置"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">git一般配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git暂存区-add"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">git暂存区(add)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git本地版本库-commit"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">git本地版本库(commit)</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Git-常用命令"><span class="post-toc-number">1.</span> <span class="post-toc-text">Git 常用命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git一般配置"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">git一般配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git新建-切换分支-branch-checkout"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">git新建,切换分支(branch,checkout)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git暂存区-add"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">git暂存区(add)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git提交本地-commit"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">git提交本地(commit)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git回滚代码-reset-revert"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">git回滚代码(reset,revert)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git代码合并-merge-rebase"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">git代码合并(merge,rebase)</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -202,22 +202,119 @@
 <li>缓存区(stage) 是用来暂时存放工作区中修改的内容</li>
 <li>提交历史（commit history） 提交代码的历史记录</li>
 </ul>
+<hr>
 <h2 id="git一般配置"><a href="#git一般配置" class="headerlink" title="git一般配置"></a>git一般配置</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git --version <span class="comment">// 查看git版本</span></span><br><span class="line">git config --global user.name <span class="comment">// 获取当前登录的用户名</span></span><br><span class="line">git config --global user.email <span class="comment">// 获取当前登录用户的邮箱</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果刚没有获取到用户配置，则只能拉取代码，不能修改  要是使用git，你要告诉git是谁在使用</span></span><br><span class="line">git config --global user.name <span class="string">'userName'</span>  <span class="comment">// 设置git账户，userName为你的git账号</span></span><br><span class="line">git config --global user.email <span class="string">'email'</span></span><br></pre></td></tr></table></figure>
 <p><strong>1.初始化git仓库</strong></p>
-<p>git init // 在本地新建一个repo,进入一个项目目录,执行git init,会初始化一个repo,并在当前文件夹下创建一个.git文件夹.</p>
+<ul>
+<li><code>git init</code>：在本地新建一个repo,进入一个项目目录,执行git init,会初始化一个repo,并在当前文件夹下创建一个.git文件夹.</li>
+</ul>
 <p><strong>2.创建忽略文件</strong></p>
-<p>touch .gitignore    // 不需要服务器端提交的内容可以写到忽略文件里</p>
+<ul>
+<li><code>touch .gitignore</code>：不需要服务器端提交的内容可以写到忽略文件里</li>
+</ul>
 <p><strong>3.克隆远程代码</strong></p>
-<p>git clone [url]  // 获取一个url对应的远程Git repo, 创建一个local copy.</p>
+<ul>
+<li><code>git clone [url]</code>：获取一个url对应的远程Git repo, 创建一个local copy.</li>
+</ul>
+<p><strong>4.拉取代码</strong></p>
+<ul>
+<li><code>git pull</code></li>
+</ul>
+<p><strong>5.推送至远程代码</strong></p>
+<ul>
+<li><code>git push</code></li>
+</ul>
+<hr>
+<h2 id="git新建-切换分支-branch-checkout"><a href="#git新建-切换分支-branch-checkout" class="headerlink" title="git新建,切换分支(branch,checkout)"></a>git新建,切换分支(branch,checkout)</h2><blockquote>
+<p><strong>git branch</strong></p>
+</blockquote>
+<ul>
+<li><code>git branch</code>：查看所有本地分支</li>
+<li><code>git branch -r</code>：查看所有远程分支</li>
+<li><code>git branch -a</code>：查看所有本地，远程分支</li>
+<li><code>git branch dev</code>：新建本地dev分支，不切换当前分支</li>
+<li><code>git branch -m dev version</code>：修改本地分支dev名称为version</li>
+</ul>
+<blockquote>
+<p><strong>git checkout</strong></p>
+</blockquote>
+<ul>
+<li><code>git checkout dev</code>：切换分支到dev</li>
+<li><code>git checkout -b dev</code>：新建dev分支，并切换当前分支到dev分支</li>
+<li><code>git checkout .</code>：把当前分支没有暂存的所有修改文件，恢复成未修改是的样子</li>
+</ul>
+<blockquote>
+<p><strong>新增本地分支推送到远程流程</strong></p>
+</blockquote>
+<ul>
+<li><code>git branch dev</code> || <code>git checkout -b dev</code>：新增dev分支</li>
+<li><code>git push --set-upstream origin dev</code> || <code>git push -u origin dev</code>：建立本地到远端仓的链接(建立链接后，以后提交远端直接git push即可)</li>
+</ul>
+<blockquote>
+<p><strong>删除本地和远程分支</strong></p>
+</blockquote>
+<ul>
+<li><code>git branch -d(--delete) dev</code>：删除本地dev分支</li>
+<li><code>git push origin --delete dev</code> || <code>git push origin :dev</code>：删除远程dev分支</li>
+</ul>
+<hr>
 <h2 id="git暂存区-add"><a href="#git暂存区-add" class="headerlink" title="git暂存区(add)"></a>git暂存区(add)</h2><ul>
 <li><code>git add *</code>：提交所有变化,包括文件修改(modified)以及新文件(new),但不包括被删除的文件</li>
 <li><code>git add -u</code>(–update)：提交被修改(modified)和被删除(deleted)文件,不包括新文件(new)</li>
 <li><code>git add .</code>, <code>git add -A</code>(–all)：提交新文件和被修改文件,被删除文件</li>
 </ul>
-<h2 id="git本地版本库-commit"><a href="#git本地版本库-commit" class="headerlink" title="git本地版本库(commit)"></a>git本地版本库(commit)</h2><ul>
+<hr>
+<h2 id="git提交本地-commit"><a href="#git提交本地-commit" class="headerlink" title="git提交本地(commit)"></a>git提交本地(commit)</h2><ul>
 <li><code>git commit -m &#39;message&#39;</code>：提交已经过git add的文件到本地版本库</li>
 <li><code>git commit -a -m &#39;message&#39;</code>：提交进过git add和没有进过git add的文件到本地版本库</li>
 <li><code>git commit --amend -m &#39;message&#39;</code>：不新增commit提交记录，覆盖上一次提交记录</li>
+</ul>
+<h2 id="git回滚代码-reset-revert"><a href="#git回滚代码-reset-revert" class="headerlink" title="git回滚代码(reset,revert)"></a>git回滚代码(reset,revert)</h2><blockquote>
+<p><strong>reset(版本回撤)</strong></p>
+</blockquote>
+<p>reset 会重置并删除回撤的提交历史记录</p>
+<ul>
+<li><code>git reset --soft</code>：回退版本库,到<code>暂存区</code></li>
+<li><code>git reset --mixed</code>：回退版本库，暂存区,到<code>工作区</code>。(–mixed为git reset的默认参数，即当任何参数都不加的时候的参数)</li>
+<li><code>git reset --hard</code>：回退版本库，暂存区，工作区。（因此我们修改过的代码就没了，需要谨慎使用）</li>
+<li><code>git reset HEAD(head)~1</code> || <code>git reset commit_id</code>：使用head~n回滚到第n次提交，或者commit_id</li>
+</ul>
+<blockquote>
+<p><strong>revert(撤销操作)</strong></p>
+</blockquote>
+<p>revert 不会重置提交的历史记录，会创建一个新的提交。</p>
+<ul>
+<li><code>git revert HEAD(head)~1</code> || <code>git revert commit_id</code>：使用head~n回滚到第n次提交，或者commit_id</li>
+<li><code>git revert --continue</code></li>
+<li><code>git revert --abort</code>：如果不想解决冲突的话可以取消撤回</li>
+<li><code>git revert --quit</code></li>
+</ul>
+<h2 id="git代码合并-merge-rebase"><a href="#git代码合并-merge-rebase" class="headerlink" title="git代码合并(merge,rebase)"></a>git代码合并(merge,rebase)</h2><blockquote>
+<p><strong>merge合并策略</strong></p>
+</blockquote>
+<ul>
+<li><code>git merge [-s 合并策略] [-x 合并策略参数] &lt;commit&gt;...</code><ul>
+<li>resolve(合并策略)：只能用于两个分支的合并，这个合并策略被认为是最安全、最快的合并策略</li>
+<li>recursive(合并策略)：只能用于两个分支的合并，两个分支的合并默认使用该策略。该策略可以使用选项：<ul>
+<li>ours(合并策略参数)：在遇到冲突的时候，选择当前分支的版本，而忽略远程合并过来的版本。</li>
+<li>theirs(合并策略参数)：和ours选项相反</li>
+<li>subtree<a href="合并策略参数">=path</a>：使用子树合并策略</li>
+</ul>
+</li>
+<li>octpus(合并策略)：用于合并两个以上分支的策略，该策略拒绝执行需要手动解决的复杂合并。<ul>
+<li>ours(合并策略参数)：可以用于任意多个分支的合并策略，合并的结果总是使用当前分支的内容而丢弃远程合并过来的版本内容</li>
+<li>subtree(合并策略参数)：这是一个经过调整后的recursive策略</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>例子如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当前分支合并dev分支，有冲突完全接受dev分支的代码</span></span><br><span class="line">git merge -s recursive -x theirs dev</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>rebase</strong></p>
+</blockquote>
+<ul>
+<li><code>git rebase</code></li>
 </ul>
 
         </div>
@@ -227,7 +324,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-05-22T10:05:25.000Z" itemprop="dateUpdated">2019-05-22 18:05:25</time>
+    最后更新时间：<time datetime="2019-05-23T08:59:34.000Z" itemprop="dateUpdated">2019-05-23 16:59:34</time>
 </span><br>
 
 
