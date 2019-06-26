@@ -25,12 +25,12 @@
 <meta name="keywords" content="web其他">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web安全类">
-<meta property="og:url" content="http://yoursite.com/2018/04/30/面试-web安全/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/30/网络-web安全/index.html">
 <meta property="og:site_name" content="EvanYang&#39;s Blog">
 <meta property="og:description" content="XSS攻击XSS(Cross-Site Scripting，跨站脚本攻击)是一种代码注入攻击。攻击者在目标网站上注入恶意代码，当被攻击者登陆网站时就会执行这些恶意代码，这些脚本可以读取 cookie，session tokens，或者其它敏感的网站信息，对用户进行钓鱼欺诈，甚至发起蠕虫攻击等。 XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/memory1994/SaveImage/master/csrf.png">
-<meta property="og:updated_time" content="2019-05-16T01:50:40.000Z">
+<meta property="og:updated_time" content="2019-06-24T02:42:36.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web安全类">
 <meta name="twitter:description" content="XSS攻击XSS(Cross-Site Scripting，跨站脚本攻击)是一种代码注入攻击。攻击者在目标网站上注入恶意代码，当被攻击者登陆网站时就会执行这些恶意代码，这些脚本可以读取 cookie，session tokens，或者其它敏感的网站信息，对用户进行钓鱼欺诈，甚至发起蠕虫攻击等。 XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致恶意脚">
@@ -145,7 +145,7 @@
 </time>
 
 
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端面试题/">前端面试题</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/网络/">网络</a></li></ul>
 
             
         </h5>
@@ -162,12 +162,12 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#XSS攻击"><span class="post-toc-number">1.</span> <span class="post-toc-text">XSS攻击</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#反射型XSS"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">反射型XSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM型XSS"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">DOM型XSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储型XSS"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">存储型XSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XSS其他防范手段"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">XSS其他防范手段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XSS检测"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">XSS检测</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#CSRF"><span class="post-toc-number">2.</span> <span class="post-toc-text">CSRF</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#点击劫持"><span class="post-toc-number">3.</span> <span class="post-toc-text">点击劫持</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#典型点击劫持攻击流程"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">典型点击劫持攻击流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#点击劫持防御"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">点击劫持防御</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安全扫描工具"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">安全扫描工具</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#XSS攻击"><span class="post-toc-text">XSS攻击</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#反射型XSS"><span class="post-toc-text">反射型XSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#DOM型XSS"><span class="post-toc-text">DOM型XSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#存储型XSS"><span class="post-toc-text">存储型XSS</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XSS其他防范手段"><span class="post-toc-text">XSS其他防范手段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#XSS检测"><span class="post-toc-text">XSS检测</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#CSRF"><span class="post-toc-text">CSRF</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#点击劫持"><span class="post-toc-text">点击劫持</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#典型点击劫持攻击流程"><span class="post-toc-text">典型点击劫持攻击流程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#点击劫持防御"><span class="post-toc-text">点击劫持防御</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安全扫描工具"><span class="post-toc-text">安全扫描工具</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-面试-web安全" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-网络-web安全" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">web安全类</h1>
@@ -175,7 +175,7 @@
             <time class="post-time" title="2018-04-30 00:00:00" datetime="2018-04-29T16:00:00.000Z" itemprop="datePublished">2018-04-30</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端面试题/">前端面试题</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/网络/">网络</a></li></ul>
 
 
 
@@ -341,12 +341,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-05-16T01:50:40.000Z" itemprop="dateUpdated">2019-05-16 09:50:40</time>
+    最后更新时间：<time datetime="2019-06-24T02:42:36.390Z" itemprop="dateUpdated">2019-06-24 10:42:36</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/04/30/面试-web安全/" target="_blank" rel="external">http://yoursite.com/2018/04/30/面试-web安全/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2018/04/30/网络-web安全/" target="_blank" rel="external">http://yoursite.com/2018/04/30/网络-web安全/</a>
         
     </div>
     
@@ -373,7 +373,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/04/30/面试-web安全/&title=《web安全类》 — EvanYang's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/04/30/网络-web安全/&title=《web安全类》 — EvanYang's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -383,22 +383,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/04/30/面试-web安全/&title=《web安全类》 — EvanYang's Blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/04/30/网络-web安全/&title=《web安全类》 — EvanYang's Blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/30/面试-web安全/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/30/网络-web安全/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《web安全类》 — EvanYang's Blog&url=http://yoursite.com/2018/04/30/面试-web安全/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《web安全类》 — EvanYang's Blog&url=http://yoursite.com/2018/04/30/网络-web安全/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/30/面试-web安全/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/30/网络-web安全/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -428,6 +428,13 @@
     </div>
   
 
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/04/30/面试-js/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">js基础</h4>
+      </a>
+    </div>
   
 </nav>
 
@@ -498,7 +505,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/04/30/面试-web安全/&title=《web安全类》 — EvanYang's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/04/30/网络-web安全/&title=《web安全类》 — EvanYang's Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -508,22 +515,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/04/30/面试-web安全/&title=《web安全类》 — EvanYang's Blog&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/04/30/网络-web安全/&title=《web安全类》 — EvanYang's Blog&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/30/面试-web安全/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/04/30/网络-web安全/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《web安全类》 — EvanYang's Blog&url=http://yoursite.com/2018/04/30/面试-web安全/&via=http://yoursite.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《web安全类》 — EvanYang's Blog&url=http://yoursite.com/2018/04/30/网络-web安全/&via=http://yoursite.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/30/面试-web安全/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2018/04/30/网络-web安全/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -534,7 +541,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIElEQVR42u3aQW7DMAwEwP7/0+61QGBjSSoFLI1OReLYGh9YiuTPT7yum/X327vrP6/5vP7uV4sXBgbGaxnX41r1nu7u/PxtsjcMDIxzGHcPzq9JtlsNx/lzMTAwMJ6DYJ7w3bHnrw8DAwMjCaxJQpmEWgwMDIzJIXZyQK3e54tncQwMjBcy8mLZ///9lf4GBgbGqxhXceWFtlWfRLvCwMDYmpEHuF6xbFWzIdoPBgbG1oxqub83GNFLCvPXh4GBsSsj/1ly00m5rddCwMDAOI2Rj1b0ymfVJLKQaGJgYBzGqB5Be+3G6jWFaREMDIytGZPwmqd9eTsh+S0GBsaZjLUl+15SWE5MMTAwjmH0yvr5w6pH1kJpDwMDY2tG76aTo2neLl0AwMDA2JSRhNdJMS4f1xilqhgYGNsx8hQwj2+9VK9ahitHcQwMjNcyeuMO81Ja7/7V8h8GBsbbGXmJLd9EL6SOeBgYGFsz8rJar8Q2GQgrF/IwMDAOYOSbqKZxk8GyAhgDA+MARh6Cky0+l8yq94/+AWBgYBzAyB/WK8/NmxAYGBhnMq7i6g1S9FoLhRYmBgbG1ozqrMJkQ/lWFm8dAwNjC0YeZJOAmB9QF6ePGBgYBzCqga/a4EzKeZMxNQwMDIz5Y/LRit7nGBgYGNWA20suk1dT6MRiYGBsx+htK38F1dZmPniBgYFxAqOa8CXUfNN5+6E62IGBgbEF4xcZiSLgRUZ80wAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACHUlEQVR42u3aQY7CMAwFUO5/aWaLNIL53ykjNXlZVVDaPBaWHfvxiNfzZb1+8vt6dv+7X128MDAwbst4flzv7ll/S/JtsjcMDIxzGO9e/O663dAsHCd7w8DAwJglf22ozd+LgYGBsc6YfTL7azAwME5jJEVsfsbVBtCEfVktjoGBcUNGflj2/9df6W9gYGDcivEsV1J8XpUsFrvCwMDYmpEHuDwhS5K/ukBN9oOBgbEp43PgSwJrGyjbpDBphWJgYJzDmLUb21+14xcRGAMDY2tG21bMtzgL5SuJJgYGxt6MWem40m5s7yn2iYGBsR2jfU2bSuYhexbuMTAwzmHUx1vlYVwb+5O0sjhuw8DA2I7xjUO3WfuzCPEYGBhbM2YPXSlNE/CsaYGBgXEO4/Oj83GuWWm60kLAwMA4gTGMymUAbRsAxbAFBgbGpoxrxx1mT8sHxS7ovmJgYNyccdW46kqjdJaAYmBg7M1Ivl7Z7lUNzqKsxcDA2JQxOz7L07j26H/4BAwMjGMYSdBs07vk+Unw/SNYY2BgHMNYbyXO2HkrAgMD4zTGs1xt0TtLKOuhMQwMjK0Zs3GKlaO6ZCsXbx0DA2MLRhJk2+tZs3MpfcTAwDiAUY81lCXrrOVQvBEDAwMjPpJbISUDFhgYGBiz0nRWvrYDZ3V/AwMDYztGUsSuD0m0hXRxDwYGxtaMtnRsW4+z5uVSQYuBgbEP4wdPoTaURXzxwwAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
