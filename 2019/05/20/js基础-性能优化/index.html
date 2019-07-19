@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="性能优化">
-    <meta name="description" content="1.加载和执行">
+    <meta name="description" content="1.加载和执行1.1 script脚本加载的三种方式 defer,async属性添加到内嵌的script脚本上是无效的,因为script标签本身就不需要异步加载了,是同步代码   defer属性 1234&amp;lt;script defer src=&quot;1.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;!-- defer为延迟加载脚本属性,该属性特点 --&amp;gt;1.添加defer的script标">
 <meta name="keywords" content="性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js性能优化">
 <meta property="og:url" content="http://yoursite.com/2019/05/20/js基础-性能优化/index.html">
 <meta property="og:site_name" content="EvanYang&#39;s Blog">
-<meta property="og:description" content="1.加载和执行">
+<meta property="og:description" content="1.加载和执行1.1 script脚本加载的三种方式 defer,async属性添加到内嵌的script脚本上是无效的,因为script标签本身就不需要异步加载了,是同步代码   defer属性 1234&amp;lt;script defer src=&quot;1.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;!-- defer为延迟加载脚本属性,该属性特点 --&amp;gt;1.添加defer的script标">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-26T08:45:52.723Z">
+<meta property="og:updated_time" content="2019-06-27T09:22:02.240Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js性能优化">
-<meta name="twitter:description" content="1.加载和执行">
+<meta name="twitter:description" content="1.加载和执行1.1 script脚本加载的三种方式 defer,async属性添加到内嵌的script脚本上是无效的,因为script标签本身就不需要异步加载了,是同步代码   defer属性 1234&amp;lt;script defer src=&quot;1.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;!-- defer为延迟加载脚本属性,该属性特点 --&amp;gt;1.添加defer的script标">
     
         <link rel="alternate" type="application/atom+xml" title="EvanYang&#39;s Blog" href="/atom.xml">
     
@@ -160,7 +160,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-加载和执行"><span class="post-toc-text">1.加载和执行</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-加载和执行"><span class="post-toc-text">1.加载和执行</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-1-script脚本加载的三种方式"><span class="post-toc-text">1.1 script脚本加载的三种方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-2-优化点"><span class="post-toc-text">1.2 优化点</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -185,7 +185,26 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="1-加载和执行"><a href="#1-加载和执行" class="headerlink" title="1.加载和执行"></a>1.加载和执行</h1>
+            <h1 id="1-加载和执行"><a href="#1-加载和执行" class="headerlink" title="1.加载和执行"></a>1.加载和执行</h1><h2 id="1-1-script脚本加载的三种方式"><a href="#1-1-script脚本加载的三种方式" class="headerlink" title="1.1 script脚本加载的三种方式"></a>1.1 script脚本加载的三种方式</h2><blockquote>
+<p><strong>defer,async属性添加到内嵌的script脚本上是无效的,因为script标签本身就不需要异步加载了,是同步代码</strong></p>
+</blockquote>
+<ul>
+<li><p>defer属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">"1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- defer为延迟加载脚本属性,该属性特点 --&gt;</span></span><br><span class="line">1.添加defer的script标签,不会阻塞当前DOM的加载和解析,会与其并行加载</span><br><span class="line">2.加载完成会在DOM加载和解析完成之后，在DOMContentLoaded事件触发之前执行脚本</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>async属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">async</span> <span class="attr">src</span>=<span class="string">"2.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- async为异步加载脚本属性,该属性特点 --&gt;</span></span><br><span class="line">1.添加defer的script标签,不会阻塞当前DOM的加载和解析,会与其并行加载</span><br><span class="line">2.异步加载完脚本,即立马执行脚本内容(如比DOM加载快,会阻塞当前DOM执行)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>动态创建script标签</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>)</span><br><span class="line">script.type = <span class="string">'text/javascript'</span></span><br><span class="line">script.src = <span class="string">'file.js'</span></span><br><span class="line">script.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'加载file.js完成'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 动态创建script标签属于异步加载(类似于async属性)</span></span><br><span class="line"><span class="number">1.</span>动态创建script标签,不会阻塞当前DOM的加载和解析,会与其并行加载</span><br><span class="line"><span class="number">2.</span>异步加载完脚本,即立马执行脚本内容(如比DOM加载快,会阻塞当前DOM执行)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="1-2-优化点"><a href="#1-2-优化点" class="headerlink" title="1.2 优化点"></a>1.2 优化点</h2><ul>
+<li>闭合标签之前,将所有的&lt;script&gt;标签放到页面底部,这能确保在脚本执行前页面已经完成了渲染</li>
+<li>合并脚本,页面中的&lt;script&gt;标签越少,加载也就越快,响应也更迅速,无论外链文件还是内嵌脚本都是如此</li>
+<li>&lt;script&gt;标签使用defer,async属性,或者动态创建&lt;script&gt;元素</li>
+</ul>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -193,7 +212,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2019-06-26T08:45:52.723Z" itemprop="dateUpdated">2019-06-26 16:45:52</time>
+    最后更新时间：<time datetime="2019-06-27T09:22:02.240Z" itemprop="dateUpdated">2019-06-27 17:22:02</time>
 </span><br>
 
 
@@ -273,18 +292,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2019/06/05/文档使用-icon优雅使用/" id="post-prev" class="post-nav-link">
+      <a href="/2019/05/20/js基础-正则表达式/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">iconfont优雅使用</h4>
+        <h4 class="title">正则表达式</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/05/20/js基础-正则表达式/" id="post-next" class="post-nav-link">
+      <a href="/2019/05/11/文档使用-markdowm文档/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">正则表达式</h4>
+        <h4 class="title">markdowm使用文档</h4>
       </a>
     </div>
   
