@@ -195,7 +195,7 @@
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-js基础-性能优化" class="article-card article-type-post" itemprop="blogPost">
+            <article id="post-js基础-ecmascript6" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2019-05-20 00:00:00" datetime="2019-05-19T16:00:00.000Z" itemprop="datePublished">2019-05-20</time>
@@ -212,7 +212,7 @@
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/05/20/js基础-性能优化/">js性能优化</a>
+      <a class="post-title-link" href="/2019/05/20/js基础-ecmascript6/">es6基础</a>
     </h3>
   
 
@@ -222,22 +222,85 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        1.加载和执行1.1 script脚本加载的三种方式
-defer,async属性添加到内嵌的script脚本上是无效的,因为script标签本身就不需要异步加载了,是同步代码
+        ECMAScript6小结1.块级绑定(let,const)
+let和const声明
 
 
-defer属性
-1234&lt;script defer src="1.js"&gt;&lt;/script&gt;&lt;!-- defer为延迟加载脚本属性,该属性特点 --&gt;1.添加defer的scri...
+let声明的是变量的块级作用域，const声明的是常量的块级作用域，都不会进行变量提升
+禁止重复声明
+ES6 允许块级作用域的任意嵌套。
+123&#123;&#123;&#123;  let insane = 'Hello world'&#125;&#125;&#125;
+
+内层作用域可以定义外层作用域...
     
 
-        <a href="/2019/05/20/js基础-性能优化/" class="post-more waves-effect waves-button">
+        <a href="/2019/05/20/js基础-ecmascript6/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-文档使用-Git常用命令" class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2019-05-20 00:00:00" datetime="2019-05-19T16:00:00.000Z" itemprop="datePublished">2019-05-20</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/文档使用/">文档使用</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2019/05/20/文档使用-Git常用命令/">Git常用命令</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Git 常用命令
+Git主要包含三个区
+
+
+                
+                    
+                    
+                
+                
+            
+
+工作区(working diretory) 用于修改文件
+缓存区(stage) 是用来暂时存放工作区中修改的内容
+提交历史（commit...
+    
+
+        <a href="/2019/05/20/文档使用-Git常用命令/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git常用命令/">Git常用命令</a></li></ul>
 
     </div>
     
@@ -306,66 +369,7 @@ i
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-文档使用-Git常用命令" class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2019-05-20 00:00:00" datetime="2019-05-19T16:00:00.000Z" itemprop="datePublished">2019-05-20</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/文档使用/">文档使用</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/05/20/文档使用-Git常用命令/">Git常用命令</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Git 常用命令
-Git主要包含三个区
-
-
-                
-                    
-                    
-                
-                
-            
-
-工作区(working diretory) 用于修改文件
-缓存区(stage) 是用来暂时存放工作区中修改的内容
-提交历史（commit...
-    
-
-        <a href="/2019/05/20/文档使用-Git常用命令/" class="post-more waves-effect waves-button">
-            阅读全文…
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git常用命令/">Git常用命令</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-js基础-ecmascript6" class="article-card article-type-post" itemprop="blogPost">
+            <article id="post-js基础-性能优化" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2019-05-20 00:00:00" datetime="2019-05-19T16:00:00.000Z" itemprop="datePublished">2019-05-20</time>
@@ -382,7 +386,7 @@ Git主要包含三个区
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2019/05/20/js基础-ecmascript6/">es6基础</a>
+      <a class="post-title-link" href="/2019/05/20/js基础-性能优化/">js性能优化</a>
     </h3>
   
 
@@ -392,26 +396,22 @@ Git主要包含三个区
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        ECMAScript6小结1.块级绑定(let,const)
-let和const声明
+        1.加载和执行1.1 script脚本加载的三种方式
+defer,async属性添加到内嵌的script脚本上是无效的,因为script标签本身就不需要异步加载了,是同步代码
 
 
-let声明的是变量的块级作用域，const声明的是常量的块级作用域，都不会进行变量提升
-禁止重复声明
-ES6 允许块级作用域的任意嵌套。
-123&#123;&#123;&#123;  let insane = 'Hello world'&#125;&#125;&#125;
-
-内层作用域可以定义外层作用域...
+defer属性
+1234&lt;script defer src="1.js"&gt;&lt;/script&gt;&lt;!-- defer为延迟加载脚本属性,该属性特点 --&gt;1.添加defer的scri...
     
 
-        <a href="/2019/05/20/js基础-ecmascript6/" class="post-more waves-effect waves-button">
+        <a href="/2019/05/20/js基础-性能优化/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/性能优化/">性能优化</a></li></ul>
 
     </div>
     
@@ -470,13 +470,13 @@ ES6 允许块级作用域的任意嵌套。
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-网络-web安全" class="article-card article-type-post" itemprop="blogPost">
+            <article id="post-面试-js基础题" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2018-04-30 00:00:00" datetime="2018-04-29T16:00:00.000Z" itemprop="datePublished">2018-04-30</time>
 
         
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/网络/">网络</a></li></ul>
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/前端面试题/">前端面试题</a></li></ul>
 
 
 
@@ -487,7 +487,7 @@ ES6 允许块级作用域的任意嵌套。
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/04/30/网络-web安全/">web安全类</a>
+      <a class="post-title-link" href="/2018/04/30/面试-js基础题/">js基础题</a>
     </h3>
   
 
@@ -497,18 +497,17 @@ ES6 允许块级作用域的任意嵌套。
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        XSS攻击XSS(Cross-Site Scripting，跨站脚本攻击)是一种代码注入攻击。攻击者在目标网站上注入恶意代码，当被攻击者登陆网站时就会执行这些恶意代码，这些脚本可以读取 cookie，session tokens，或者其它敏感的网站信息，对用户进行钓鱼欺诈，甚至发起蠕虫攻击等。
-XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一起；浏览器无法分辨哪些脚本是可信的，导致...
+        
     
 
-        <a href="/2018/04/30/网络-web安全/" class="post-more waves-effect waves-button">
+        <a href="/2018/04/30/面试-js基础题/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
     
     <div class="post-footer">
         
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web其他/">web其他</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js面试题/">js面试题</a></li></ul>
 
     </div>
     
@@ -609,7 +608,7 @@ XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一�
         </li>
     
         <li class="post-list-item fade">
-            <article id="post-面试-js基础题" class="article-card article-type-post" itemprop="blogPost">
+            <article id="post-面试-js原理题" class="article-card article-type-post" itemprop="blogPost">
 
     <div class="post-meta">
         <time class="post-time" title="2018-04-30 00:00:00" datetime="2018-04-29T16:00:00.000Z" itemprop="datePublished">2018-04-30</time>
@@ -626,7 +625,7 @@ XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一�
 
   
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/04/30/面试-js基础题/">js基础题</a>
+      <a class="post-title-link" href="/2018/04/30/面试-js原理题/">js原理题</a>
     </h3>
   
 
@@ -636,10 +635,11 @@ XSS 的本质是：恶意代码未经过滤，与网站正常的代码混在一�
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        
+        前言本文针对目前常见的面试题，仅提供了相应的核心原理及思路，部分边界细节未处理。后续会持续更新，希望对你有所帮助。
+1. 实现一个call函数123456789101112// 思路：将要改变this指向的方法挂到目标this上执行并返回Function.prototype.mycall = function (context) &#123;  if (typeof this !== 'fu...
     
 
-        <a href="/2018/04/30/面试-js基础题/" class="post-more waves-effect waves-button">
+        <a href="/2018/04/30/面试-js原理题/" class="post-more waves-effect waves-button">
             阅读全文…
         </a>
     </div>
